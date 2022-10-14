@@ -21,16 +21,144 @@
     -->
     <title>React App</title>
   </head>
-  <body>
+  <body data-my-test="123">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div class="page-root">
-      <div class="page-header">
-        <div>Last.fm</div>
-        <div><input type="search"/></div>
+      <div class="page-header full-width">
+        <a href="https://www.last.fm" class="page-header-logo">Last.fm</a>
+          <!-- TODO: Поиск будет добавлен позже (второй этап) -->
+        <div class="page-header-search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewBox="0 0 12 12"><path d="m11 10-2-2a5 5 90 10-1 1l2 2a.5.5 90 001-1zm-6-9a4 4 0 010 8 4 4 0 010-8z"/></svg>
+          <input class="page-header-search-input" placeholder="Поиск музыки..."/>
+        </div>
       </div>
-      <div class="page-content"></div>
-      <div class="page-footer"></div>
+      <div class="page-content">
+        <!-- Результаты поиска треков -->
+        <!-- TODO: Приделать запросы к API (второй этап) -->
+        <div class="section-wrapper">
+          <div class="section-caption">Результаты поиска для "AJR"</div>
+          <div class="list">
+            <a class="list-item" href="https://www.last.fm/music/AJR/_/Weak">
+              <img class="list-item-column list-item-image" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/64s/e9b66927925f67b6ea67943541b31f19.jpg" alt="AJR"/>
+              <div class="list-item-column text-primary font-size_m">Weak</div>
+              <div class="list-item-column font-size_m text-secondary">AJR</div>
+              <div class="list-item-column font-size_m text-unaccented">3:40</div>
+            </a>
+            <a class="list-item" href="https://www.last.fm/music/AJR/_/Bang!">
+              <img class="list-item-column list-item-image" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/64s/c2ba683b3b9621ea6e25893182298036.jpg" alt="AJR"/>
+              <div class="list-item-column text-primary font-size_m">Bang!</div>
+              <div class="list-item-column font-size_m text-secondary">AJR</div>
+              <div class="list-item-column font-size_m text-unaccented">2:50</div>
+            </a>
+            <a class="list-item" href="https://www.last.fm/music/AJR/_/World%27s+Smallest+Violin">
+              <img class="list-item-column list-item-image" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/64s/c2ba683b3b9621ea6e25893182298036.jpg" alt="AJR"/>
+              <div class="list-item-column text-primary font-size_m">Wold's Smallest Violin</div>
+              <div class="list-item-column font-size_m text-secondary">AJR</div>
+              <div class="list-item-column font-size_m text-unaccented">3:00</div>
+            </a>
+            <a class="list-item" href="https://www.last.fm/music/AJR/_/Burn+the+House+Down">
+              <img class="list-item-column list-item-image" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/64s/d643b1ba1b0930e6ebb05a7054e92bcc.jpg" alt="AJR"/>
+              <div class="list-item-column text-primary font-size_m">Burn the House Down</div>
+              <div class="list-item-column font-size_m text-secondary">AJR</div>
+              <div class="list-item-column font-size_m text-unaccented">3:33</div>
+            </a>
+          </div>
+        </div>
+        <!-- Список популярных исполнителей -->
+        <!-- TODO: Приделать запросы к API (второй этап) -->
+        <div class="section-wrapper">
+          <div class="section-caption">Популярные исполнители</div>
+          <div class="tile full-width">
+            <a class="tile-item-vertical" href="https://www.last.fm/music/BTS">
+              <img class="tile-item-vertical-image image-round" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/3b045cb7600f63a72dab4cedaf2800dc.jpg" alt="BTS"/>
+              <div class="text-primary font-size_m tile-item-line">BTS</div>
+              <div class="text-unaccented font-size_s tile-item-line">k-pop | bts | kpop</div>
+            </a>
+            <a class="tile-item-vertical" href="https://www.last.fm/music/Taylor+Swift">
+              <img class="tile-item-vertical-image image-round" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/d651025ce0f11bfdba128f44f1d2e370.jpg" alt="Taylor Swift"/>
+              <div class="text-primary font-size_m tile-item-line">Taylor Swift</div>
+              <div class="text-unaccented font-size_s tile-item-line">pop | country | female vocalists</div>
+            </a>
+            <a class="tile-item-vertical" href="https://www.last.fm/music/Kanye+West">
+              <img class="tile-item-vertical-image image-round" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/d9684559325886ea21db87804bdd8871.jpg" alt="Kanye West"/>
+              <div class="text-primary font-size_m tile-item-line">Kanye West</div>
+              <div class="text-unaccented font-size_s tile-item-line">hip-hop | rap | hip hop</div>
+            </a>
+            <a class="tile-item-vertical" href="https://www.last.fm/music/The+Weeknd">
+              <img class="tile-item-vertical-image image-round" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/1555adf0c9a4d1d9e67db159109758ea.jpg" alt="The Weeknd"/>
+              <div class="text-primary font-size_m tile-item-line">The Weeknd</div>
+              <div class="text-unaccented font-size_s tile-item-line">rnb | electronic | canadian</div>
+            </a>
+            <a class="tile-item-vertical" href="https://www.last.fm/music/BLACKPINK">
+              <img class="tile-item-vertical-image image-round" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/1251b09532f0f311e2fcdd25895e9d19.jpg" alt="BLACKPINK"/>
+              <div class="text-primary font-size_m tile-item-line">BLACKPINK</div>
+              <div class="text-unaccented font-size_s tile-item-line">k-pop | kpop | pop</div>
+            </a>
+            <a class="tile-item-vertical" href="https://www.last.fm/music/Arctic+Monkeys">
+              <img class="tile-item-vertical-image image-round" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/a96699071d4a014972780dfeb319c680.jpg" alt="Arctic Monkeys"/>
+              <div class="text-primary font-size_m tile-item-line">Arctic Monkeys</div>
+              <div class="text-unaccented font-size_s tile-item-line">indie rock | indie | british</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Список популярных треков -->
+        <!-- TODO: Приделать запросы к API (второй этап) -->
+        <div class="section-wrapper">
+          <div class="section-caption">Популярные треки</div>
+          <div class="tile full-width">
+            <a class="tile-item-horizontal" href="https://www.last.fm/music/Lil+Yachty/_/Poland">
+              <img class="tile-item-horizontal-image" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/3063a383aba980fb1fa18c87bf3ef934.jpg" alt="Lil Yachty"/>
+              <div>
+                <div class="text-primary font-size_m tile-item-line">Poland</div>
+                <div class="text-secondary tile-item-line">Lil Yachty</div>
+                <div class="text-unaccented tile-item-line">rap | trap | hip-hop</div>
+              </div>
+            </a>
+            <a class="tile-item-horizontal" href="https://www.last.fm/music/BTS/_/Yet+to+Come">
+              <img class="tile-item-horizontal-image" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/3b045cb7600f63a72dab4cedaf2800dc.jpg" alt="BTS"/>
+              <div>
+                <div class="text-primary font-size_m tile-item-line">Yet to Come</div>
+                <div class="text-secondary font-size_m tile-item-line">BTS</div>
+                <div class="text-unaccented font-size_s tile-item-line">k-pop | bts | kpop</div>
+              </div>
+            </a>
+            <a class="tile-item-horizontal" href="https://www.last.fm/music/Jimin/_/With+You">
+              <img class="tile-item-horizontal-image" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/5df28a471f7ed8f218a8cd5c37009b20.jpg" alt="Jimin"/>
+              <div>
+                <div class="text-primary font-size_m tile-item-line">With you</div>
+                <div class="text-secondary font-size_m tile-item-line">Jimin</div>
+                <div class="text-unaccented font-size_s tile-item-line">k-pop | pop | kpop</div>
+              </div>
+            </a>
+            <a class="tile-item-horizontal" href="https://www.last.fm/music/BLACKPINK/_/Shut+Down">
+              <img class="tile-item-horizontal-image" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/1251b09532f0f311e2fcdd25895e9d19.jpg" alt="BLACKPINK"/>
+              <div>
+                <div class="text-primary font-size_m tile-item-line">Shut Down</div>
+                <div class="text-secondary font-size_m tile-item-line">BLACKPINK</div>
+                <div class="text-unaccented font-size_s tile-item-line">k-pop | kpop | pop</div>
+              </div>
+            </a>
+            <a class="tile-item-horizontal" href="https://www.last.fm/music/BTS/_/Butter">
+              <img class="tile-item-horizontal-image " loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/avatar170s/3b045cb7600f63a72dab4cedaf2800dc.jpg" alt="BTS"/>
+              <div>
+                <div class="text-primary font-size_m tile-item-line">Butter</div>
+                <div class="text-secondary font-size_m tile-item-line">BTS</div>
+                <div class="text-unaccented font-size_s tile-item-line">k-pop | bts | kpop</div>
+              </div>
+            </a>
+            <a class="tile-item-horizontal" href="https://www.last.fm/music/Rick+Astley/_/Never+Gonna+Give+You+Up">
+              <img class="tile-item-horizontal-image" loading="lazy" src="https://lastfm.freetls.fastly.net/i/u/300x300/7eedf5854f216eba1908447afdb746d6.jpg" alt="Rick Astley"/>
+              <div>
+                <div class="text-primary font-size_m tile-item-line">Never Gonna Give You Up</div>
+                <div class="text-secondary font-size_m tile-item-line">Rick Astley</div>
+                <div class="text-unaccented font-size_s tile-item-line">80s | pop | rickroll</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
