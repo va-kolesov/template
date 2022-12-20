@@ -46,8 +46,12 @@ body,
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none;
+}
+
 .page-header {
-    flex-grow: 1;
+    flex-grow: 0;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -80,7 +84,7 @@ body,
     padding: var(--offset_xs);
     margin-left: var(--offset_m);
     width: 200px;
-    transition: width .4s;
+    transition: width .4s ease-in-out;
     outline: none;
     border: none;
 }
@@ -90,8 +94,10 @@ body,
     fill: var(--color_light1);
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 
+.page-header-search-input:not(:placeholder-shown),
 .page-header-search-input:focus {
     width: 100%;
 }
@@ -101,8 +107,9 @@ body,
     display: flex;
     flex-direction: column;
     max-width: 1280px;
-    height: 100%;
-    padding: var(--offset_xl);
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--offset_l);
 }
 
 .text-ellipsis {
@@ -247,6 +254,10 @@ body,
     margin-bottom: var(--offset_l);
 }
 
+.section {
+    margin-top: var(--offset_l);
+}
+
 .section-caption {
     text-align: center;
     font-size: var(--font-size_m);
@@ -297,13 +308,24 @@ body,
     text-decoration: none;
 }
 
+.tile-item-horizontal-text {
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--offset_s);
+    flex-grow: 0;
+    min-width: 1px;
+}
+
 .tile-item-vertical-image {
     width: 180px;
+    height: 180px;
     object-fit: contain;
 }
 
 .tile-item-horizontal-image {
-    width: 100px;
+    min-width: 84px;
+    min-height: 84px;
+    flex-shrink: 0;
     object-fit: contain;
 }
 
@@ -313,16 +335,59 @@ body,
 
 .tile-item-line {
     margin-top: var(--offset_xs);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.tile-item-line:hover {
-    text-decoration: underline;
+.placeholder400:empty {
+    height: 400px;
 }
 
-.baseline-s:before,
-.baseline-m:before,
-.baseline-l:before {
-    content: '\200b';
-    visibility: hidden;
+.placeholder520:empty {
+    height: 520px;
+}
+
+.placeholder400:empty,
+.placeholder520:empty {
+    width: 100%;
+    background-color: #e6e6e6;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder400:empty::after,
+.placeholder520:empty::after {
+    content: '';
     width: 0;
-}
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    box-shadow: 0 0 150px 150px rgb(160 160 160 / 50%);
+    animation: skeleton 1.5s linear infinite;
+    opacity: 0;
+  }
+  
+  @keyframes skeleton {
+    0% {
+      left: -50%;
+      opacity: 0;
+    }
+  
+    20% {
+      left: 10%;
+      opacity: 0.4;
+    }
+  
+    50% {
+      left: 50%;
+      opacity: 1;
+    }
+  
+    100% {
+      left: 120%;
+      opacity: 0.0;
+    }
+  }
