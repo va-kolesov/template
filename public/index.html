@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="stylesheet" href="%PUBLIC_URL%/style.css" />
-    <script type="module" src="%PUBLIC_URL%/pageScripts.js" ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -21,71 +19,9 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Last.fm</title>
-    <script type="module">
-      import {beforeLoadPage} from '/pageScripts.js';
-      beforeLoadPage();
-    </script>
   </head>
   <body data-my-test="123">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <div class="page-root">
-      <div class="page-header full-width">
-        <a href="https://www.last.fm" class="page-header-logo">Last.fm</a>
-          <!-- TODO: Поиск будет добавлен позже (второй этап) -->
-        <div class="page-header-search">
-          <svg id="search-button" xmlns="http://www.w3.org/2000/svg" class="search-icon" viewBox="0 0 12 12"><path d="m11 10-2-2a5 5 90 10-1 1l2 2a.5.5 90 001-1zm-6-9a4 4 0 010 8 4 4 0 010-8z"/></svg>
-          <input id="search-input" class="page-header-search-input" placeholder="Поиск музыки..."/>
-        </div>
-      </div>
-      <div class="page-content">
-        <!-- Результаты поиска треков -->
-        <!-- TODO: Приделать запросы к API (второй этап) -->
-        <div id="search-section" class="section-wrapper hidden">
-          <div class="section-caption">Результаты поиска для "AJR"</div>
-          <div id="search-artists" class="section">
-            <div class="subsection-caption">Исполнители</div>
-            <div class="blocks fullWidth list-content">
-            </div>
-            <div class="full-width more-button-wrapper">
-              <div class="more-button font-size_s">Больше исполнителей</div>
-            </div>
-          </div>
-          <div id="search-albums" class="section">
-            <div class="subsection-caption">Альбомы</div>
-            <div class="blocks fullWidth list-content">
-            </div>
-            <div class="full-width more-button-wrapper">
-              <div class="more-button font-size_s">Больше альбомов</div>
-            </div>
-          </div>
-          <div id="search-tracks" class="section">
-            <div class="subsection-caption">Треки</div>
-            <div class="list full-width list-content">
-              
-            </div>
-            <div class="full-width more-button-wrapper">
-              <div class="more-button font-size_s">Больше треков</div>
-            </div>
-          </div>
-        </div>
-        <!-- Список популярных исполнителей -->
-        <!-- TODO: Приделать запросы к API (второй этап) -->
-        <div class="section-wrapper" id="top-section">
-          <div id="popular-artists" class="section">
-            <div class="section-caption">Популярные исполнители</div>
-            <div class="tile full-width list-content placeholder520"></div>
-          </div>
-          <div id="popular-tracks" class="section">
-            <div class="section-caption">Популярные треки</div>
-            <div class="tile full-width list-content placeholder400"></div>
-        </div>
-        </div>
-      </div>
-    </div>
-    <script type="module">
-      import {afterLoadPage} from '/pageScripts.js';
-      afterLoadPage();
-    </script>
   </body>
 </html>

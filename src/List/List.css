@@ -1,0 +1,138 @@
+
+.blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.blocks-item {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    width: 25%;
+    min-height: 100%;
+    min-width: 25%;
+    z-index: 1;
+}
+
+.blocks-item::before {
+    content: '';
+    padding-top: 100%;
+}
+
+.blocks-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, #0000006b, transparent);
+}
+
+.blocks-item-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.blocks-item-text-wrapper {
+    position: absolute;
+    bottom: 0;
+    margin: var(--offset_xs);
+}
+
+.blocks-item-text {
+    margin: var(--offset_xs);
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 64px 2fr 1fr 100px;
+    border-top: 1px solid var(--color_light1);
+}
+
+.list-item {
+    display: contents;
+    padding: var(--offset_s);
+    text-decoration: none;
+}
+
+.list-item-column {
+    padding: var(--offset_s);
+    height: 64px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color_light1);
+}
+
+.list-item-image {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+.tile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tile-item-vertical {
+    width: 200px;
+    height: 260px;
+    padding: var(--offset_m);
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.tile-item-horizontal {
+    width: 400px;
+    height: 100px;
+    padding: var(--offset_s);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
+
+.tile-item-horizontal-text {
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--offset_s);
+    flex-grow: 0;
+    min-width: 1px;
+}
+
+.tile-item-vertical-image {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+.tile-item-horizontal-image {
+    min-width: 84px;
+    min-height: 84px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.image-round {
+    border-radius: 50%;
+}
+
+.tile-item-line {
+    margin-top: var(--offset_xs);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
