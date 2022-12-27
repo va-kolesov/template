@@ -125,10 +125,10 @@ export function renderBlock(
 
 /**
  * Рендер данных об альбоме в виде блока
- * @param {string} caption 
- * @param {string} description 
- * @param {string} url 
- * @param {string} img 
+ * @param {string} caption
+ * @param {string} description
+ * @param {string} url
+ * @param {string} img
  */
 export function renderBlockAlbumItem({
     name = '',
